@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body onload="iniciarApp()">
+    <div class="background-splitter">
+      <div class="container-cash">
+        <div class="cash-create">
+          <div class="form-group">
+            <label for="bill-amount">Bill</label>
+            <input type="number" class="form-control" id="bill-amount" />
+          </div>
+          <div class="form-group">
+            <label for="">Select Tip %</label>
+            <div class="list-button-tips">
+              <input
+                type="button"
+                class="button-tip"
+                type="button"
+                value="5%"
+              />
+              <input
+                type="button"
+                class="button-tip"
+                type="button"
+                value="10%"
+              />
+              <input
+                type="button"
+                class="button-tip"
+                type="button"
+                value="15%"
+              />
+              <input
+                type="button"
+                class="button-tip"
+                type="button"
+                value="25%"
+              />
+              <input
+                type="button"
+                class="button-tip"
+                type="button"
+                value="50%"
+              />
+              <input type="number" placeholder="custom" id="tip-custom" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="number-of-persons">Number of People</label>
+            <input type="number" class="form-control" id="number-of-persons" />
+          </div>
+        </div>
+        <div class="cash-results">
+          <div class="cash-list-results">
+            <div class="cash-list-item">
+              <div class="label-container">
+                <span>Tip Amount</span>
+                <small>/ person</small>
+              </div>
+              <div class="amount">
+                <span id="tip-by-person">$0.00</span>
+              </div>
+            </div>
+            <div class="cash-list-item">
+              <div class="label-container">
+                <span>Total</span>
+                <small>/ person</small>
+              </div>
+              <div class="amount">
+                <span id="total-by-person">$0.00</span>
+              </div>
+            </div>
+          </div>
+          <div class="cash-button-reset">
+            <button type="button" class="btn-reset" onclick="reset()">
+              RESET
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Jonathan Robinson Manchego Sosa</a>.
+      </div>
+    </div>
+    <!-- Bill Select Tip % 5% 10% 15% 25% 50% Custom Number of People Tip Amount /
+    person Total / person Reset -->
+
+    <script src="/assets/scripts.js"></script>
+  </body>
+</html>
