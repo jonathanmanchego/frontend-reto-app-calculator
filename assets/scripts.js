@@ -45,18 +45,26 @@ const getValues = (useTipCustom = false) => {
   const inputPersons = document.querySelector("#number-of-persons");
   if (Number(inputBill.value) === 0) {
     inputBill.classList.add("invalid");
+    valorBill = 0;
+    document.querySelector("#tip-by-person").innerText = `$0.00`;
+    document.querySelector("#total-by-person").innerText = `$0.00`;
   } else {
     inputBill.classList.remove("invalid");
     valorBill = Number(inputBill.value);
   }
   if (Number(inputPersons.value) === 0) {
     inputPersons.classList.add("invalid");
+    numeroPersonas = 0;
+    document.querySelector("#tip-by-person").innerText = `$0.00`;
+    document.querySelector("#total-by-person").innerText = `$0.00`;
   } else {
     inputPersons.classList.remove("invalid");
     numeroPersonas = Number(inputPersons.value);
   }
   if (valorTip === 0) {
     inputTipCustom.classList.add("invalid");
+    document.querySelector("#tip-by-person").innerText = `$0.00`;
+    document.querySelector("#total-by-person").innerText = `$0.00`;
   } else {
     inputTipCustom.classList.remove("invalid");
   }
@@ -70,6 +78,8 @@ const getValues = (useTipCustom = false) => {
 };
 const startOperation = () => {
   if (valorBill === 0 || valorTip === 0 || numeroPersonas === 0) {
+    document.querySelector("#tip-by-person").innerText = `$0.00`;
+    document.querySelector("#total-by-person").innerText = `$0.00`;
     return;
   }
   const tipAmountByPerson = ((valorBill / 100) * valorTip) / numeroPersonas;
